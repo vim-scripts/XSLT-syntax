@@ -1,0 +1,10 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=257
+
+Syntax highlighting for XSLT with HTML keywords.
+                                               
+containing keywords
+- HTML
+- CSS (use syntax/css.vim)
+- JavaScript (use syntax/javascript.vim)
+- VBScript (use syntax/vb.vim)
+- PerlScript (use syntax/perl.vim)
