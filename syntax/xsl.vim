@@ -4,9 +4,9 @@
 "
 " Last Change:	24 May 2002
 " Filenames:	*.xslt, *.xsl
-" Maintainar:	Atsushi Moriki <four@olive.freemail.nejp>
+" Maintainar:	Atsushi Moriki <four@olive.freemail.ne.jp>
 "
-" Version: 		0.3.10
+" Version: 		0.3.11
 "
 " Summary:		Syntax Highlight for XSLT (with HTML and Others)
 " Description:  Syntax Highlight for XSLT with HTML keywords. 
@@ -26,6 +26,13 @@
 "					:let b:xsl_include_perl = 1			> PerlScript
 "					:let b:xsl_include_vbs = 1			> VBScript
 "
+"
+"include keyword setting :
+"	let b:xsl_include_html = 1			" HTML
+"	let b:xsl_include_css = 1			" CSS
+"	let b:xsl_include_javascript = 1	" JavaScript
+"	let b:xsl_include_perl = 1			" PerlScript
+"	let b:xsl_include_vbs = 1			" VBScript
 
 
 if exists("b:current_syntax")
@@ -319,8 +326,8 @@ if exists('b:xsl_include_css')
 	syn include	@xmlCss syntax/css.vim
 	unlet b:current_syntax
 	"syn cluster	innerCss contains=cssDefinition
-	syn cluster	innerCss
-			\ contains=css.*Attr,css.*Properties,cssComment,cssLength,cssColor,cssURL,cssImportant,cssError,cssString
+	syn cluster	innerCss contains=cssComment,cssLength,cssColor,cssURL,cssImportant,cssError,cssString
+	"syn cluster	innerCss contains=css.*Attr,css.*Properties,cssComment,cssLength,cssColor,cssURL,cssImportant,cssError,cssString
 
 	" inner html <style> - </style>
 	syn region	cssStyle start=+<style+ keepend end=+</style>+ contains=@xmlSyntax,xmlComment,xmlStyle_cdata,@xmlCss
